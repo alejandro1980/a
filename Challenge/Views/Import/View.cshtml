@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Challenge.Models.Socio>
+
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    Cantidad total de personas registradas:  @ViewBag.Socio1
+
+
+</p>
+
+<br />
+<p>
+    Promedio de edad de socios de Racing: @ViewBag.Socio2
+</p>
+
+<br />
+<p>
+    Un listado con las 100 primeras personas casadas, con estudios Universitarios, ordenadas de menor a mayor según su edad. Por cada persona, mostrar: nombre, edad y equipo.
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SocioName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocioAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocioTeam)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocioName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocioAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocioTeam)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+<br />
+<p>
+    Un listado con los 5 nombres más comunes entre los hinchas de River.
+</p>
+
+<table class="table">
+
+    @foreach (var i in ViewBag.Socio4)
+    {
+        <tr>
+            <td>
+                @i
+            </td>
+
+        </tr>
+    }
+</table>
+<br />
+<p>
+    Un listado, ordenado de mayor a menor según la cantidad de socios, que enumere, junto con cada equipo, el promedio de edad de sus socios, la menor edad registrada y la mayor edad registrada.
+</p>
+<table class="table">
+
+    @foreach (var i in ViewBag.Socio5)
+    {
+        <tr>
+            <td>
+                @i
+            </td>
+
+        </tr>
+    }
+</table>
+
